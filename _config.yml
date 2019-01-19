@@ -33,12 +33,16 @@ navigation:
     url: "/"
   - title: "Контакт"
     url: "/contact/"
-  - title: "Членство"
+  - title: "Приклучи се"
     url: "/members/"
   - title: "ЧПП"
     url: "/faq/"
   - title: "Донации"
     url: "/donations/"
+  - title: "Настани"
+    url: "/events/"
+  - title: "Блог"
+    url: "/blog/"
 
 
 # Every FAQ needs to have an unique id
@@ -76,4 +80,6 @@ sass:
 
 collections:
   events:
+    output: true
+  blog:
     output: true
