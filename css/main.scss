@@ -95,3 +95,12 @@ small {
 .carousel-inner > .carousel-item > img, .carousel-inner > .item > a > img {
     max-height: 400px; 
 }
+
+.search-results {
+    margin-top: 1em;
+    padding: 0;
+}
+
+.search-results li {
+    list-style: none;
+}

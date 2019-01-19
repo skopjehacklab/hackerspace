@@ -31,18 +31,16 @@ neighbors:
 navigation:
   - title: "Дома"
     url: "/"
-  - title: "Контакт"
-    url: "/contact/"
   - title: "Приклучи се"
     url: "/members/"
-  - title: "ЧПП"
-    url: "/faq/"
-  - title: "Донации"
-    url: "/donations/"
   - title: "Настани"
     url: "/events/"
   - title: "Блог"
     url: "/blog/"
+  - title: "Донации"
+    url: "/donations/"
+  - title: "ЧПП"
+    url: "/faq/"
 
 
 # Every FAQ needs to have an unique id
@@ -74,12 +72,14 @@ faq:
 markdown: kramdown
 plugins:
   - jekyll-feed
+  - jekyll-paginate
+
+paginate: 2
+paginate_path: "/blog/:num/"
 
 sass:
   sass_dir: css
 
 collections:
   events:
-    output: true
-  blog:
     output: true
