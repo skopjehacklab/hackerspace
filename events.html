@@ -1,0 +1,33 @@
+---
+layout: default
+permalink: /events/
+---
+
+<div class="events">
+    <h3>Настани во #хаклаб</h3>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Наслов</th>
+                <th scope="col">Датум</th>
+                <th scope="col">Време</th>
+                <th scope="col">Статус</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for post in site.events limit:50 %}
+                <tr>
+                    <td><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></td>
+                    <td>{{ post.start_date | date_to_string }}</td>
+                    <td>{{ post.start_date | date: "%H:%M" }} - {{ post.end_date | date: "%H:%M" }}</td>
+
+                    <th class="upcoming-event" scope="row">UPCOMING</th>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+</div>
