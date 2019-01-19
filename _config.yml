@@ -43,8 +43,7 @@ navigation:
     url: "/faq/"
 
 
-# Every FAQ needs to have an unique id
-# Also, in order for a new FAQ to be rendered
+# In order for a new FAQ to be rendered
 # you need to rebuild the website
 faq:
   - title: "Дали треба да бидам член на КИКА за да го посетувам хаклабот?"

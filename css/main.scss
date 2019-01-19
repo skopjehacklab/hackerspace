@@ -104,3 +104,25 @@ small {
 .search-results li {
     list-style: none;
 }
+
+.sorted-item {
+    color: rgb(87, 94, 100);
+    background-color: lightgrey;
+    padding: 1px;
+    font-family: monospace;
+    font-size: medium;
+}
+
+.sorted-item-list li {
+    list-style: none;
+}
+
+.post-content img {
+    object-fit: scale;
+    width: 100%;
+}
+
+.card-body img {
+    object-fit: scale;
+    width: 100%;
+}

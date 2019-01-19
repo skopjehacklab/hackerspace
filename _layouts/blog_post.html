@@ -9,13 +9,38 @@
 
             <!-- Post Content Column -->
             <div class="col-lg-8">
-
                 <!-- Title -->
                 <h1 class="mt-4">{{ page.title }}</h1>
-                <small style="font-size: 14px; color: grey"> Објавено од {{ page.author }} на дата {{ page.date | date: "%Y/%m/%d "}} во {{ page.date | date: "%H:%M" }}ч.</small>
+                <small style="font-size: 14px; color: grey"> Објавено од {{ page.author }} на дата {{ page.date | date:
+                    "%Y/%m/%d "}}
+                    во {{ page.date | date: "%H:%M" }}ч.</small>
+                
+                {% if page.tags.first != nil %}
+                    <br/>
+                    <br />
+                    <small style="font-size: 14px; color: grey">
+                        Лепенки:
+                        {% for tag in page.tags %}
+                        {% capture tag_name %}{{ tag }}{% endcapture %}
+                        <a href="/blog/sort#{{ tag_name }}"><span style="font-family: monospace; padding: 2px; background-color: darkgrey; color: rgb(255, 255, 255); font-size: 14px;">{{ tag_name }}</span></a>
+                        {% endfor %}
+                    </small>
+                {% endif %}
+                
+                {% if page.category != nil %}
+                    <br/>
+                    <small style="font-size: 14px; color: grey">
+                        Категорија:
+                        {% for category in page.categories %}
+                        {% capture category_name %}{{ category }}{% endcapture %}
+                        <a href="/blog/sort#{{ category_name }}"><span style="font-family: monospace; padding: 2px; background-color: darkgrey; color: rgb(255, 255, 255); font-size: 14px;">{{ category_name }}</span></a>
+                        {% endfor %}
+                    </small>
+                    {% endif %}
                 <hr>
-
-                {{ content }}
+                <div class="post-content">
+                    {{ content }}
+                </div>
             </div>
 </body>
 
