@@ -4,6 +4,7 @@ permalink: /events/
 title: "Настани"
 ---
 
+
 <div class="events">
     <h3>Настани во #хаклаб</h3>
 
@@ -18,17 +19,44 @@ title: "Настани"
         </thead>
         <tbody>
 
-            {% for post in site.events limit:50 %}
+            {% assign id = 0 %}
+            {% assign sorted = site.events | sort: 'start_date' | reverse %}
+            {% for post in sorted limit:15 %}
                 <tr>
                     <td><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></td>
-                    <td>{{ post.start_date | date_to_string }}</td>
+                    <td >{{ post.start_date | date_to_string }}</td>
                     <td>{{ post.start_date | date: "%H:%M" }} - {{ post.end_date | date: "%H:%M" }}</td>
 
-                    <th class="upcoming-event" scope="row">UPCOMING</th>
+                    <th id="{{ id }}" future-date="{{ post.start_date | date: '%Y%m%d' }}" scope="row"></th>
                 </tr>
+
+                {% capture id %}{{ id | plus:1 }}{% endcapture %}
             {% endfor %}
         </tbody>
     </table>
 
 
 </div>
+
+<script>
+        function getCompareDate() {
+            var d = new Date(),
+                month = '' + (d.getMonth() + 1),
+                day = '' + d.getDate(),
+                year = d.getFullYear();
+            if (month.length < 2) month = '0' + month;
+            if (day.length < 2) day = '0' + day;
+            return [year, month, day].join('');
+        }
+
+        document.querySelectorAll('th[future-date]').forEach(node => {
+            if(node.attributes['future-date'].value > getCompareDate()) {
+                $("#" + node.id).html("UPCOMING");
+                $("#" + node.id).addClass("upcoming-event");
+            } else {
+                console.log("NOTHING");
+                $("#" + node.id).html("PAST");
+                $("#" + node.id).addClass("past-event");
+            }
+        })
+</script>

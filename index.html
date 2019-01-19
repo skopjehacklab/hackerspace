@@ -41,7 +41,9 @@ title: "Дома"
         </div>
         <div class="info-panel">
             <h5 class="sidebar-header">Настани</h5>
-            <hr> {% for post in site.events limit:6 %}
+            <hr> 
+            {% assign sorted = site.events | sort: 'start_date' | reverse %}
+            {% for post in sorted limit:5 %}
             <div class="sidebar-event">
                 {{ post.start_date | date_to_string }} <br />
                 <a href="{{ post.url | prepend: site.baseurl }}">{{ post.start_date | date: "%H:%M" }} - {{ post.end_date
