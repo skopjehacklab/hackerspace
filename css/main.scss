@@ -43,23 +43,14 @@ html, body {
     color: rgb(55, 177, 171);
 }
 
-// ### DONATIONS ###
-.donations {
+.page {
     padding: 3em;
 }
 
-.donations h3 {
+.page h3 {
     color: rgba(0, 0, 0, 0.7);
 }
 
-// ### FAQ ###
-.faq h3 {
-    color: rgba(0, 0, 0, 0.7);
-}
-
-.faq {
-    padding: 3em;
-}
 
 // ### EVENTS ###
 .upcoming-event {
@@ -80,15 +71,6 @@ html, body {
     color: rgba(0, 0, 0, 0.7);
 }
 
-
-.events h3 {
-    color: rgba(0, 0, 0, 0.7);
-}
-
-.events {
-    padding: 3em;
-}
-
 .event-post-container {
     padding: 3em;
 }
@@ -105,4 +87,11 @@ small {
 
 .info-text span {
     color: red;
+}
+
+// ### CAROUSEL ### 
+
+// Don't forget the hardcoded HTML @ index.html for the carousel
+.carousel-inner > .carousel-item > img, .carousel-inner > .item > a > img {
+    max-height: 400px; 
 }
