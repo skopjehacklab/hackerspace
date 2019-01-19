@@ -1,0 +1,108 @@
+---
+---
+
+@import 'bootstrap/bootstrap';
+
+html, body {
+    font-family: "Roboto Condensed","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 17px;
+}
+
+// ### NAV BAR ###
+.navbar {
+    background-color: white;
+}
+
+.navbar img {
+    width: 70px;
+    height: 70px;
+}
+
+// ### END NAV BAR ###
+
+.info-panel {
+    padding: 10px;
+    margin-top: 1em;
+}
+
+.info-panel ul {
+    padding: 0;
+}
+
+.info-panel ul li {
+    list-style: none;
+    padding: 3px;
+}
+
+.title-header {
+    color: rgb(55, 177, 171);
+}
+
+.sidebar-header {
+    // color: rgb(152, 195, 219);
+    color: rgb(55, 177, 171);
+}
+
+// ### DONATIONS ###
+.donations {
+    padding: 3em;
+}
+
+.donations h3 {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+// ### FAQ ###
+.faq h3 {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.faq {
+    padding: 3em;
+}
+
+// ### EVENTS ###
+.upcoming-event {
+    color: green;
+    font-size: 13px;
+}
+
+.past-event {
+    color: grey;
+    font-size: 13px;
+}
+
+.sidebar-event a {
+    margin-left: 10px;
+}
+
+.sidebar-event {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+
+.events h3 {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.events {
+    padding: 3em;
+}
+
+.event-post-container {
+    padding: 3em;
+}
+
+small {
+    font-size: 1em;
+}
+
+// ### DONATIONS PAGE ###
+
+.info-text li {
+    list-style: none;
+}
+
+.info-text span {
+    color: red;
+}
