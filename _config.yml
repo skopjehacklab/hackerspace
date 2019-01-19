@@ -2,11 +2,32 @@ title: "#skopjehacklab"
 description: "#SkopjeHacklab website"
 baseurl: ""
 url: "" # the base hostname & protocol e.g. http://example.com
-twitter_username: 2cmk
-github_username:  skopjehacklab
+
+# Links
+facebook: "https://facebook.com/skopjehacklab"
+twitter: "https://twitter.com/2cmk"
+github: "https://github.com/skopjehacklab"
+mailing_list: "https://lists.softver.org.mk/listinfo/ossm-members"
+IRC: "https://webchat.freenode.net/?channels=lugola"
 
 permalink: pretty
 
+# Neighbors
+neighbors:
+  - name: "Prishtina Hackerspace in Prishtina, Kosovo"
+    url: "http://www.prishtinahackerspace.org/"
+  - name: "Hacklab Belgrade in Belgrade, Serbia"
+    url: "https://oosm.org/"
+  - name: "OpenLabs Albania in Tirana, Albania"
+    url: "https://openlabs.cc/en/"
+  - name: "Bonevet Makerspace in Gjakova, Kosovo"
+    url: "https://www.bonevet.org/"
+  - name: "Init Lab in Sofia, Bulgaria"
+    url: "https://initlab.org/"
+  - name: "Hackerspace.gr in Athens, Greece"
+    url: "https://www.hackerspace.gr"
+
+# NavBar
 navigation:
   - title: "Дома"
     url: "/"
@@ -18,6 +39,32 @@ navigation:
     url: "/faq/"
   - title: "Донации"
     url: "/donations/"
+
+
+# Every FAQ needs to have an unique id
+# Also, in order for a new FAQ to be rendered
+# you need to rebuild the website
+faq:
+  - title: "Дали треба да бидам член на КИКА за да го посетувам хаклабот?"
+    description: "A1"
+  - title: "Како да станам член? Колку кошта чланарината?"
+    description: "A2"
+  - title: "Не сакам да бидам член, но сакам да му помогнам на хаклабот. Што можам да направам?"
+    description: "A3"
+  - title: "Би сакал да донирам работи кои не ги користам, што можам да ви донирам?"
+    description: "A4"
+  - title: "Дали треба да бидам член за да доаѓам на настани или курсеви?"
+    description: "A5"
+  - title: "Кога е отворен хаклабот?"
+    description: "A6"
+  - title: "Дали можам да доаѓам во хаклабот иако не сум техничко лице?"
+    description: "A7"
+  - title: "Кои се бенефитите ако сум член?"
+    description: "A8"
+  - title: "Како да организирам настан во хаклаб?"
+    description: "A9"
+  - title: "Колку треба да сум стар за да станам член на хаклабот?"
+    description: "A10"
 
 # Build settings
 markdown: kramdown

@@ -1,37 +1,31 @@
----
-layout: default
-permalink: /
+--- 
+layout: default 
+permalink: / 
+title: "Дома" 
 ---
 
 <div class="row mt-2">
     <div class="col-8">
         <img style="width: 100%;" src="/assets/img/spodeli.png">
         <p> <b>Сподели</b> е иницијатива на непрофитната организација <b>Слободен Софтвер Македонија</b>
-            којашто „оперира“ на
-            една локација во <b>Скопје, хаклабот КИКА</b>.
-            Поентата на „Сподели“ е да се приближи концептот на слободна култура и слободен софтвер до сите
-            заинтересирани граѓани на Скопје па и пошироко.
+            којашто „оперира“ на една локација во <b>Скопје, хаклабот КИКА</b>. Поентата на „Сподели“ е да се приближи концептот
+            на слободна култура и слободен софтвер до сите заинтересирани граѓани на Скопје па и пошироко.
 
-            <br> <br>
-            Хаклабот е проект на Слободен Софтвер Македонија, и местото каде што се организираат сите настани
-            на ССМ и иницијативата „Сподели“. </p>
+            <br> <br> Хаклабот е проект на Слободен Софтвер Македонија, и местото каде што се организираат сите настани на
+            ССМ и иницијативата „Сподели“. </p>
 
         <h4 class="title-header">Хаклаб?</h4>
         <hr>
         <p>
 
-            За оние кои не се сретнале со овој термин претходно, хаклаб е место каде луѓе со заеднички
-            интереси, најчесто компјутери, технологија и слободна култура како што е и во овој случај,
-            можат да се
-            среќаваат, социјализираат, соработуваат или едноставно да споделат знаење.
+            За оние кои не се сретнале со овој термин претходно, хаклаб е место каде луѓе со заеднички интереси, најчесто компјутери,
+            технологија и слободна култура како што е и во овој случај, можат да се среќаваат, социјализираат, соработуваат
+            или едноставно да споделат знаење.
 
-            <br><br>
-            Хаклабот служи
-            како отворен простор каде заинтересираните можат да изработуваат
-            најразлични проекти, заеднички или индивидуални. Хаклаби има секаде во светот и КИКА е еден
-            од нив. <br> <br>
-            Името на хаклабот, КИКА, е рекурзивен акроним и значи: КИКА е Информации, Култура и
-            Автономија. <a href="{{ '/faq' | prepend: site.baseurl | prepend: site.url }}">Научи повеќе ... </a>
+            <br><br> Хаклабот служи како отворен простор каде заинтересираните можат да изработуваат најразлични проекти,
+            заеднички или индивидуални. Хаклаби има секаде во светот и КИКА е еден од нив. <br> <br> Името на хаклабот, КИКА,
+            е рекурзивен акроним и значи: КИКА е Информации, Култура и Автономија. <a href="{{ '/faq' | prepend: site.baseurl | prepend: site.url }}">Научи
+                повеќе ... </a>
         </p>
     </div>
     <div class="col-4">
@@ -39,39 +33,72 @@ permalink: /
             <h5 class="sidebar-header">Најди нѐ на</h5>
             <hr>
             <ul class="links">
-
-                <li><a href="">Facebook</a></li>
-                <li><a href="">Twitter</a></li>
-                <li><a href="">Mailing list</a></li>
-                <li><a href="">Internet Relay Chat</a></li>
+                <li><a href="{{ site.facebook }}">Facebook</a></li>
+                <li><a href="{{ site.twitter }}">Twitter</a></li>
+                <li><a href="{{ site.mailing_list }}">Mailing list</a></li>
+                <li><a href="{{ site.IRC }}">Internet Relay Chat</a></li>
             </ul>
         </div>
         <div class="info-panel">
             <h5 class="sidebar-header">Настани</h5>
-            <hr>
-            {% for post in site.events limit:6 %}
-                 <div class="sidebar-event">
-                    {{ post.start_date | date_to_string }} <br />
-                    <a href="{{ post.url | prepend: site.baseurl }}">{{ post.start_date | date: "%H:%M" }} - {{ post.end_date | date: "%H:%M" }} - {{ post.title }}</a>
-                </div>
+            <hr> {% for post in site.events limit:6 %}
+            <div class="sidebar-event">
+                {{ post.start_date | date_to_string }} <br />
+                <a href="{{ post.url | prepend: site.baseurl }}">{{ post.start_date | date: "%H:%M" }} - {{ post.end_date
+                    | date: "%H:%M" }} - {{ post.title }}</a>
+            </div>
             {% endfor %}
 
             <small><a href="{{ '/events' | prepend: site.baseurl | prepend: site.url }}">Сите настани</a></small>
-            
+
         </div>
 
         <div class="info-panel">
             <h5 class="sidebar-header">Нашите соседи</h5>
             <hr>
             <ul>
-
-                <li><a href="http://www.prishtinahackerspace.org/">Prishtina Hackerspace in Prishtina, Kosovo</a></li>
-                <li><a href="https://oosm.org/">Hacklab Belgrade in Belgrade, Serbia</a></li>
-                <li><a href="https://openlabs.cc/en/">OpenLabs Albania in Tirana, Albania</a></li>
-                <li><a href="https://www.bonevet.org/">Bonevet Makerspace in Gjakova, Kosovo</a></li>
-                <li><a href="https://initlab.org/">Init Lab in Sofia, Bulgaria</a></li>
+                {% for neighbor in site.neighbors %}
+                <li><a href="{{ neighbor.url }}">{{ neighbor.name }}</a></li>
+                {% endfor %}
             </ul>
         </div>
 
     </div>
+</div>
+
+<div class="row mt-3">
+        <div class="col-6">
+            <div style="height: 400px">
+                <h3>Локација</h3>
+                <hr>
+                <iframe style="height: 100%; width: 100%;" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=21.422712206840515%2C41.997650137755805%2C21.426247358322147%2C41.99944810806356&amp;layer=mapnik&amp;marker=41.998549129259594%2C21.42447978258133"
+                    style="border: 1px solid black"></iframe><br /><small><a href="https://www.openstreetmap.org/?mlat=41.99855&amp;mlon=21.42448#map=19/41.99855/21.42448">View
+                        Larger Map</a></small>
+            </div>
+        </div>
+        <div class="col-6">
+            <h3>Фотографии</h3>
+            <hr>
+            <div style="height: 400px">
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="..." alt="Прва фотка">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="..." alt="Втора фотка">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="..." alt="Трета фотка">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
 </div>

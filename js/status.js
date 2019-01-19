@@ -13,15 +13,15 @@ request.onload = function () {
     if (request.status >= 200 && request.status < 400) {
 
         if (JSON.parse(request.responseText).results[0].series[0].values[0][1] == "OPEN") {
-            status = '<span style="color: green">отворен</span> :-)';
+            status = 'Хаклабот во моментов е <span style="color: green;">отворен</span> :-)';
         } else {
-            status = '<span style="color: red">затворен</span> :-(';
+            status = 'Хаклабот во моментов е <span style="color: red;">затворен</span> :-(';
         }
     } else {
         // Reached the target server, but it returned an error
     }
 
-    $("#status").html(status);
+    $(".navbar-text").html(status);
 };
 
 request.onerror = function () {

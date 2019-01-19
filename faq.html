@@ -1,77 +1,31 @@
----
+--- 
 layout: default
 permalink: /faq/
+title: "ЧПП"
 ---
 
-<div class="faq">
-<h3>Најчесто поставувани прашања</h3>
-<hr>
+<div class="faq">     
+    <h3>Често поставувани прашања</h3>
+    <hr>
 
-<div class="card bg-light mt-2 mb-2">
-    <div class="card-header">Header</div>
-    <div class="card-body">
+    <div id="accordion">
+    {% assign id = 0 %}
+    {% for question in site.faq %}
 
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
+        <div class="card mt-2 mb-2">
+            <div class="card-header">
+                <a class="collapsed card-link" data-toggle="collapse" href="#collapse-{{id}}">{{ question.title }}</a>
+            </div>
+            <div id="collapse-{{id}}" class="collapse" data-parent="#accordion">
+                <div class="card-body">{{ question.description }}</div>
+            </div>
+        </div>
+
+        {% capture id %}{{ id | plus:1 }}{% endcapture %}
+    {% endfor %}
     </div>
 </div>
-<div class="card bg-light mb-2">
-    <div class="card-header">Header</div>
-    <div class="card-body">
 
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-    </div>
-</div>
-<div class="card bg-light mb-2">
-    <div class="card-header">Header</div>
-    <div class="card-body">
-
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-    </div>
-</div>
-<div class="card bg-light mb-2">
-    <div class="card-header">Header</div>
-    <div class="card-body">
-
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-    </div>
-</div>
-<div class="card bg-light mb-2">
-    <div class="card-header">Header</div>
-    <div class="card-body">
-
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-    </div>
-</div>
-<div class="card bg-light mb-2">
-    <div class="card-header">Header</div>
-    <div class="card-body">
-
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-    </div>
-</div>
-<div class="card bg-light mb-2">
-    <div class="card-header">Header</div>
-    <div class="card-body">
-
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-    </div>
-</div>
-<div class="card bg-light mb-2">
-    <div class="card-header">Header</div>
-    <div class="card-body">
-
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-    </div>
-</div>
-</div>
 <!-- 
 <div class="row mt-4">
         <div class="col">
