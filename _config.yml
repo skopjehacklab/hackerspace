@@ -1,0 +1,32 @@
+title: "#skopjehacklab"
+description: "#SkopjeHacklab website"
+baseurl: ""
+url: "" # the base hostname & protocol e.g. http://example.com
+twitter_username: 2cmk
+github_username:  skopjehacklab
+
+permalink: pretty
+
+navigation:
+  - title: "Дома"
+    url: "/"
+  - title: "Контакт"
+    url: "/contact/"
+  - title: "Членство"
+    url: "/members/"
+  - title: "ЧПП"
+    url: "/faq/"
+  - title: "Донации"
+    url: "/donations/"
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+
+sass:
+  sass_dir: css
+
+collections:
+  events:
+    output: true
