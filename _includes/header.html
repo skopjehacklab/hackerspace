@@ -1,55 +1,26 @@
-<!-- NAV -->
 <nav class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand" href="{{ site.url }}"><img src="/assets/svg/kika-logo-symbol-only-c2b.svg"></a>
-    <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav mr-auto">
-                {% for link in site.navigation %}
-                    {% assign class = nil %}
-                    
-                    {% if page.url == link.url %} 
-                        {% assign class = 'active' %}
-                    {% elsif page.url != '/' and page.url == link.url %}
-                        {% assign class = 'active' %} 
-                    {% endif %}
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-                    <li class="nav-item {{ class }}">
-                        <a class="nav-link" href="{{ link.url }}">{{ link.title }}</a>
-                    </li>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            {% for link in site.navigation %}
+            {% assign class = nil %}
+
+            {% if page.url == link.url %}
+            {% assign class = 'active' %}
+            {% elsif page.url != '/' and page.url == link.url %}
+            {% assign class = 'active' %}
+            {% endif %}
+
+            <li class="nav-item {{ class }}">
+                <a class="nav-link" href="{{ link.url }}">{{ link.title }}</a>
+            </li>
             {% endfor %}
         </ul>
         <span class="navbar-text"></span>
     </div>
-
-    <!-- {% for item in site.navigation %}
-    {% assign class = nil %}
-    {% if page.url contains item.url %}
-        {% assign class = 'active' %}
-    {% endif %}
-    <li class="nav-item {{ class }}">
-        <a class="nav-link" href="{{ item.url }}">{{ item.title }}</a>
-    </li>
-{% endfor %} -->
-
-
-
-    <!-- <div class="collapse navbar-collapse" id="navbarText"></div>
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">Дома<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ '/contact' | prepend: site.baseurl | prepend: site.url }}">Контакт</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ '/members' | prepend: site.baseurl | prepend: site.url }}">Членство</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ '/faq' | prepend: site.baseurl | prepend: site.url }}">ЧПП</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ '/donations' | prepend: site.baseurl | prepend: site.url }}">Донации</a>
-            </li>
-        </ul>
-        <span class="navbar-text">Хаклабот во моментов е <span style="color: green">отворен</span> :-)</span>
-    </div> -->
 </nav>
