@@ -5,7 +5,7 @@ title: "Настани"
 ---
 
 
-<div class="events">
+<div class="page">
     <h3>Настани во #хаклаб</h3>
 
     <table class="table table-striped">
@@ -51,11 +51,11 @@ title: "Настани"
 
         document.querySelectorAll('th[future-date]').forEach(node => {
             if(node.attributes['future-date'].value > getCompareDate()) {
-                $("#" + node.id).html("UPCOMING");
+                $("#" + node.id).html("ПРЕТСТОЕН");
                 $("#" + node.id).addClass("upcoming-event");
             } else {
                 console.log("NOTHING");
-                $("#" + node.id).html("PAST");
+                $("#" + node.id).html("МИНАТ");
                 $("#" + node.id).addClass("past-event");
             }
         })
