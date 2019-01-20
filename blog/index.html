@@ -9,19 +9,23 @@ title: "Блог"
     <div class="col-md-8">
         <!-- Blog Post -->
 
-        {% for post in paginator.posts %}
-        <div class="card mt-5 mb-2">
-            <div class="card-body">
-                <h2 class="card-title">{{ post.title }}</h2>
-                <hr>
-                {{ post.content | truncate: 450 }}
-                </br></br>
-                <a href="{{ post.url }}" class="btn btn-primary">Прочитај повеќе &rarr;</a>
-                </br></br>
-                <small style="font-size: 12px; color: grey;">Posted on {{ post.date | date_to_string }} by <span style="text-decoration: underline">{{post.author }}</span></small>
+        {% if paginator.posts %}
+            {% for post in paginator.posts %}
+            <div class="card mt-5 mb-5">
+                <div class="card-body">
+                    <h2 class="card-title">{{ post.title }}</h2>
+                    <hr>
+                    {{ post.content | truncate: 450 }}
+                    </br></br>
+                    <a href="{{ post.url }}" class="btn btn-primary">Прочитај повеќе &rarr;</a>
+                    </br></br>
+                    <small style="font-size: 12px; color: grey;">Posted on {{ post.date | date_to_string }} by <span style="text-decoration: underline">{{post.author }}</span></small>
+                </div>
             </div>
-        </div>
-        {% endfor %}
+            {% endfor %}
+        {% else %}
+            <p class="mt-5">Сѐ уште нема објавени постови.</p>
+        {% endif %}
 
         {% if paginator.total_pages > 1 %}
             <nav aria-label="Page navigation example">
@@ -80,14 +84,18 @@ title: "Блог"
                 <h5 class="card-header">Архива</h5>
                 <div class="card-body">
                     {% assign postsByYearMonth = site.posts | group_by_exp:"post", "post.date | date: '%Y %b'"  %}
-                    {% for yearMonth in postsByYearMonth %}
-                    <h6>{{ yearMonth.name }}</h6>
-                    <ul class="search-results">
-                        {% for post in yearMonth.items %}
-                            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+                    {% if postsByYearMonth.first != nil %}
+                        {% for yearMonth in postsByYearMonth %}
+                        <h6>{{ yearMonth.name }}</h6>
+                        <ul class="search-results">
+                            {% for post in yearMonth.items %}
+                                <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+                            {% endfor %}
+                        </ul>
                         {% endfor %}
-                    </ul>
-                    {% endfor %}
+                    {% else %}
+                        <p>Архивата е празна.</p>
+                    {% endif %}
                 </div>
             </div>
     </div>

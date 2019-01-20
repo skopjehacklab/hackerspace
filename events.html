@@ -7,33 +7,37 @@ title: "Настани"
 
 <div class="page">
     <h3>Настани во #хаклаб</h3>
+    
+    {% assign id = 0 %}
+    {% assign sorted = site.events | sort: 'start_date' | reverse %}
 
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col">Наслов</th>
-                <th scope="col">Датум</th>
-                <th scope="col">Време</th>
-                <th scope="col">Статус</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% assign id = 0 %}
-            {% assign sorted = site.events | sort: 'start_date' | reverse %}
-            {% for post in sorted limit:15 %}
+    {% if sorted.first != nil %}
+        <table class="table table-striped">
+            <thead>
                 <tr>
-                    <td><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></td>
-                    <td >{{ post.start_date | date_to_string }}</td>
-                    <td>{{ post.start_date | date: "%H:%M" }} - {{ post.end_date | date: "%H:%M" }}</td>
-
-                    <th id="{{ id }}" future-date="{{ post.start_date | date: '%Y%m%d' }}" scope="row"></th>
+                    <th scope="col">Наслов</th>
+                    <th scope="col">Датум</th>
+                    <th scope="col">Време</th>
+                    <th scope="col">Статус</th>
                 </tr>
-                {% capture id %}{{ id | plus:1 }}{% endcapture %}
-            {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
 
+                {% for post in sorted limit:15 %}
+                    <tr>
+                        <td><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></td>
+                        <td >{{ post.start_date | date: "%a, %b %d, %Y"  }}</td>
+                        <td>{{ post.start_date | date: "%H:%M" }} - {{ post.end_date | date: "%H:%M" }}</td>
 
+                        <th id="{{ id }}" future-date="{{ post.start_date | date: '%Y%m%d' }}" scope="row"></th>
+                    </tr>
+                    {% capture id %}{{ id | plus:1 }}{% endcapture %}
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Сѐ уште нема објавени настани.</p>
+    {% endif %}
 </div>
 
 <script>

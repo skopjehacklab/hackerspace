@@ -17,7 +17,6 @@ title: "Дома"
         <h4 class="title-header">Хаклаб?</h4>
         <hr>
         <p>
-
             За оние кои не се сретнале со овој термин претходно, хаклаб е место каде луѓе со заеднички интереси, најчесто компјутери,
             технологија и слободна култура како што е и во овој случај, можат да се среќаваат, социјализираат, соработуваат
             или едноставно да споделат знаење.
@@ -42,15 +41,17 @@ title: "Дома"
             <h5 class="sidebar-header">Настани</h5>
             <hr> 
             {% assign sorted = site.events | sort: 'start_date' | reverse %}
-            {% for post in sorted limit:5 %}
-            <div class="sidebar-event">
-                {{ post.start_date | date_to_string }} <br />
-                <a href="{{ post.url | prepend: site.baseurl }}">{{ post.start_date | date: "%H:%M" }} - {{ post.end_date
-                    | date: "%H:%M" }} - {{ post.title }}</a>
-            </div>
-            {% endfor %}
-
-            <small><a href="{{ '/events' | prepend: site.baseurl | prepend: site.url }}">Сите настани</a></small>
+            {% if sorted.first != nil %}    
+                {% for post in sorted limit:5 %}
+                <div class="sidebar-event">
+                    {{ post.start_date | date_to_string }} <br />
+                    <a href="{{ post.url | prepend: site.baseurl }}">{{ post.start_date | date: "%H:%M" }} - {{ post.end_date
+                        | date: "%H:%M" }} - {{ post.title }}</a>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p>Сѐ уште нема објавени настани.</p>
+            {% endif %}
 
         </div>
 
