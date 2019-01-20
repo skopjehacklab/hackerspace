@@ -1,4 +1,4 @@
-// var URL = "https://db.softver.org.mk/influxdb/query?db=status";
+var URL = "https://db.softver.org.mk/influxdb/query?db=status";
 var QUERY = "q=SELECT doorstatus FROM doorstatus WHERE location='hacklab' ORDER BY time DESC LIMIT 1";
 
 var queryURL = URL + "&" + QUERY;
