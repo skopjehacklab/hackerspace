@@ -98,11 +98,10 @@ small {
 
 .search-results {
     margin-top: 1em;
-    padding: 0;
 }
 
 .search-results li {
-    list-style: none;
+    list-style-type: circle;
 }
 
 .sorted-item {
