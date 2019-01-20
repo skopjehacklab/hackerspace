@@ -3,8 +3,6 @@ layout: default
 title: "Блог"
 ---
 
-
-
 <div class="row">
 
     <!-- Blog Entries Column -->
@@ -77,50 +75,21 @@ title: "Блог"
             </div>
         </div>
 
-        <!-- Categories Widget -->
-        <div class="card my-4">
-            <h5 class="card-header">Тагови</h5>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <ul class="list-unstyled mb-0">
-                            <li>
-                                <a href="#">Web Design</a>
-                            </li>
-                            <li>
-                                <a href="#">HTML</a>
-                            </li>
-                            <li>
-                                <a href="#">Freebies</a>
-                            </li>
-                        </ul>
-                    </div>
+        <!-- Search Widget -->
+        <div class="card mt-2">
+                <h5 class="card-header">Архива</h5>
+                <div class="card-body">
+                    {% assign postsByYearMonth = site.posts | group_by_exp:"post", "post.date | date: '%Y %b'"  %}
+                    {% for yearMonth in postsByYearMonth %}
+                    <h6>{{ yearMonth.name }}</h6>
+                    <ul class="search-results">
+                        {% for post in yearMonth.items %}
+                            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    {% endfor %}
                 </div>
             </div>
-        </div>
-        
-        <!-- Categories Widget -->
-        <div class="card my-4">
-            <h5 class="card-header">Категории</h5>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <ul class="list-unstyled mb-0">
-                            <li>
-                                <a href="#">Web Design</a>
-                            </li>
-                            <li>
-                                <a href="#">HTML</a>
-                            </li>
-                            <li>
-                                <a href="#">Freebies</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
 
 </div>
@@ -128,7 +97,7 @@ title: "Блог"
 
         
 <!-- Script pointing to search-script.js -->
-<script src="/js/search.js" type="text/javascript"></script>
+<script src="/assets/js/search.js" type="text/javascript"></script>
 
 <!-- Configuration -->
 <script>
