@@ -8,17 +8,17 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             {% for link in site.navigation %}
-            {% assign class = nil %}
+                {% assign class = nil %}
 
-            {% if page.url == link.url %}
-            {% assign class = 'active' %}
-            {% elsif page.url != '/' and page.url == link.url %}
-            {% assign class = 'active' %}
-            {% endif %}
+                {% if page.url == link.url %}
+                    {% assign class = 'active' %}
+                {% elsif page.url != '/' and page.url == link.url %}
+                    {% assign class = 'active' %}
+                {% endif %}
 
-            <li class="nav-item {{ class }}">
-                <a class="nav-link" href="{{ link.url }}">{{ link.title }}</a>
-            </li>
+                <li class="nav-item {{ class }}">
+                    <a class="nav-link" href="{{ link.url }}">{{ link.title }}</a>
+                </li>
             {% endfor %}
         </ul>
         <span class="navbar-text"></span>

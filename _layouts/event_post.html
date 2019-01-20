@@ -1,27 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-{% include head.html %}
-
-<body>
-    <div class="container">
-        {% include header.html %}
-        <div class="event-post-container">
-            <h1>{{ page.title }}</h1>
-            <small>Датум: {{ page.start_date | date_to_string }} од {{ page.start_date | date: "%H:%M" }}ч. до {{ page.end_date | date: "%H:%M" }}ч.</small>
-            <br/>
-            {% if page.author %} 
-                <small>Објавил: {{ page.author }} </small>
-            {% else %}
-                <small>Објавено од <span style="text-decoration: underline">непознат хакер</span> од хаклабот </small>
-            {% endif %}
-            <hr>
-            {{ content }}
-
+    {% include head.html %}
+    <body>
+        <div class="container">
+            {% include header.html %}
+            <div class="event-post-container">
+                <h1>{{ page.title }}</h1>
+                <small>Датум: {{ page.start_date | date_to_string }} од {{ page.start_date | date: "%H:%M" }}ч. до {{ page.end_date | date: "%H:%M" }}ч.</small>
+                <br/>
+                {% if page.author %} 
+                    <small>Објавил: {{ page.author }} </small>
+                {% else %}
+                    <small>Објавено од <span style="text-decoration: underline">анонимен хакер</span> од хаклабот</small>
+                {% endif %}
+                <hr>
+                {{ content }}
+            </div>
         </div>
-        
-        
-        
-    </div>
-</body>
-
+    </body>
 </html>

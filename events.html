@@ -18,7 +18,6 @@ title: "Настани"
             </tr>
         </thead>
         <tbody>
-
             {% assign id = 0 %}
             {% assign sorted = site.events | sort: 'start_date' | reverse %}
             {% for post in sorted limit:15 %}
@@ -29,7 +28,6 @@ title: "Настани"
 
                     <th id="{{ id }}" future-date="{{ post.start_date | date: '%Y%m%d' }}" scope="row"></th>
                 </tr>
-
                 {% capture id %}{{ id | plus:1 }}{% endcapture %}
             {% endfor %}
         </tbody>
@@ -54,7 +52,6 @@ title: "Настани"
                 $("#" + node.id).html("ПРЕТСТОЕН");
                 $("#" + node.id).addClass("upcoming-event");
             } else {
-                console.log("NOTHING");
                 $("#" + node.id).html("МИНАТ");
                 $("#" + node.id).addClass("past-event");
             }
