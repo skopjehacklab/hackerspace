@@ -24,7 +24,9 @@ title: "Блог"
             </div>
             {% endfor %}
         {% else %}
-            <p class="mt-5">Сѐ уште нема објавени постови.</p>
+            <div class="alert alert-info mt-5" role="alert">
+                Сѐ уште нема објавени постови.
+            </div>
         {% endif %}
 
         {% if paginator.total_pages > 1 %}
