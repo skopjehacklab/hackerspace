@@ -1,8 +1,10 @@
 # hackerspace
-
 Ова репо го содржи статичниот сајт на хаклабот КИКА којшто е напишан со помош на [Jekyll](https://jekyllrb.com/) и [Liquid](https://shopify.github.io/liquid/).
 
 Вебсајтот содржи мал систем за настани (следен настан, минати настани), блог и информации.
+
+![img](https://i.imgur.com/5cBIZjp.png)
+
 
 ## Зошто статичен сајт и зошто не WordPress?
 
