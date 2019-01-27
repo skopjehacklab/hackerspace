@@ -15,7 +15,7 @@ request.onload = function () {
         if (JSON.parse(request.responseText).results[0].series[0].values[0][1] == "OPEN") {
             status = 'Хаклабот во моментов е <span style="color: green;">отворен</span> :-)';
         } else {
-            status = 'Хаклабот во моментов е <span style="color: red;">затворен</span> :-(';
+            status = 'Хаклабот во моментов е <span style="color: red;">затворен</span>. Провери подоцна.';
         }
     } else {
         // Reached the target server, but it returned an error
