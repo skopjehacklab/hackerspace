@@ -1,6 +1,6 @@
 title: "#skopjehacklab"
 description: "#SkopjeHacklab website"
-baseurl: "/hackerspace"
+baseurl: "/"
 url: "https://skopjehacklab.github.io" # the base hostname & protocol e.g. http://example.com
 
 # Links
