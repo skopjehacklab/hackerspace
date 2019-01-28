@@ -29,7 +29,7 @@ title: "Настани"
                         <td >{{ post.start_date | date: "%a, %b %d, %Y"  }}</td>
                         <td>{{ post.start_date | date: "%H:%M" }} - {{ post.end_date | date: "%H:%M" }}</td>
 
-                        <th id="{{ id }}" future-date="{{ post.start_date | date: '%Y%m%d' }}" scope="row"></th>
+                        <th id="{{ id }}" start_date="{{ post.start_date | date: '%Y%m%d%H%M' }}" end_date="{{ post.end_date | date: '%Y%m%d%H%M' }}" scope="row"></th>
                     </tr>
                     {% capture id %}{{ id | plus:1 }}{% endcapture %}
                 {% endfor %}
@@ -48,13 +48,19 @@ title: "Настани"
                 month = '' + (d.getMonth() + 1),
                 day = '' + d.getDate(),
                 year = d.getFullYear();
+                hour = d.getHours();
+                minutes = d.getMinutes();
+
             if (month.length < 2) month = '0' + month;
             if (day.length < 2) day = '0' + day;
-            return [year, month, day].join('');
+            return [year, month, day, hour, minutes].join('');
         }
 
-        document.querySelectorAll('th[future-date]').forEach(node => {
-            if(node.attributes['future-date'].value > getCompareDate()) {
+        document.querySelectorAll('th[start_date]').forEach(node => {
+            if(getCompareDate() > node.attributes['start_date'].value && getCompareDate() < node.attributes['end_date'].value) {
+                $("#" + node.id).html("ВО ТЕК");
+                $("#" + node.id).addClass("current-event");
+            } else if (getCompareDate() < node.attributes['start_date'].value) {
                 $("#" + node.id).html("ПРЕТСТОЕН");
                 $("#" + node.id).addClass("upcoming-event");
             } else {
