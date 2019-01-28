@@ -80,7 +80,8 @@ $theme-colors: map-merge((
   "warning":    $warning,
   "danger":     $danger,
   "light":      $light,
-  "dark":       $dark
+  "dark":       $dark,
+  "white":      $white
 ), $theme-colors);
 // stylelint-enable
 
@@ -147,7 +148,7 @@ $body-color:                $gray-900 !default;
 //
 // Style anchor elements.
 
-$link-color:                theme-color("primary") !default;
+$link-color:                $primary !default;
 $link-decoration:           none !default;
 $link-hover-color:          darken($link-color, 15%) !default;
 $link-hover-decoration:     underline !default;
@@ -211,7 +212,7 @@ $border-radius:               .25rem !default;
 $border-radius-lg:            .3rem !default;
 $border-radius-sm:            .2rem !default;
 
-$component-active-color:      $white !default;
+$component-active-color:      $primary !default;
 $component-active-bg:         theme-color("primary") !default;
 
 $caret-width:                 .3em !default;
