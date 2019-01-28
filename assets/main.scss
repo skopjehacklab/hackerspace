@@ -1,0 +1,161 @@
+---
+---
+
+/*!
+ * Bootstrap v4.0.0 (https://getbootstrap.com)
+ * Copyright 2011-2018 The Bootstrap Authors
+ * Copyright 2011-2018 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+ @import "bootstrap/functions";
+ @import "bootstrap/custom";
+ @import "bootstrap/mixins";
+ @import "bootstrap/root";
+ @import "bootstrap/reboot";
+ @import "bootstrap/type";
+ @import "bootstrap/images";
+ @import "bootstrap/code";
+ @import "bootstrap/grid";
+ @import "bootstrap/tables";
+ @import "bootstrap/forms";
+ @import "bootstrap/buttons";
+ @import "bootstrap/transitions";
+ @import "bootstrap/dropdown";
+ @import "bootstrap/button-group";
+ @import "bootstrap/input-group";
+ @import "bootstrap/custom-forms";
+ @import "bootstrap/nav";
+ @import "bootstrap/navbar";
+ @import "bootstrap/card";
+ @import "bootstrap/breadcrumb";
+ @import "bootstrap/pagination";
+ @import "bootstrap/badge";
+ @import "bootstrap/jumbotron";
+ @import "bootstrap/alert";
+ @import "bootstrap/progress";
+ @import "bootstrap/media";
+ @import "bootstrap/list-group";
+ @import "bootstrap/close";
+ @import "bootstrap/modal";
+ @import "bootstrap/tooltip";
+ @import "bootstrap/popover";
+ @import "bootstrap/carousel";
+ @import "bootstrap/utilities";
+ @import "bootstrap/print";
+
+
+.navbar img {
+    width: $logo-size;
+    height: $logo-size;
+}
+
+.info-panel {
+    padding: 10px;
+    margin-top: $spacer;
+}
+
+.info-panel ul {
+    padding: 0;
+}
+
+.info-panel ul li {
+    list-style: none;
+    padding: 3px;
+}
+
+.title-header {
+    color: rgb(55, 177, 171);
+}
+
+.sidebar-header {
+    // color: rgb(152, 195, 219);
+    color: rgb(55, 177, 171);
+}
+
+.page {
+    margin-top: $spacer*2;
+}
+
+.page h3 {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+
+// ### EVENTS ###
+.upcoming-event {
+    color: green;
+    font-size: $font-size-base;
+}
+
+.past-event {
+    color: $gray-500;
+    font-size: $font-size-base;
+}
+
+.sidebar-event a {
+    margin-left: 10px;
+}
+
+.sidebar-event {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.event-post-container {
+    padding: $spacer*3;
+}
+
+small {
+    font-size: $spacer;
+}
+
+// ### DONATIONS PAGE ###
+
+.info-text li {
+    list-style: none;
+}
+
+.info-text span {
+    color: $danger;
+}
+
+// ### CAROUSEL ###
+
+// Don't forget the hardcoded HTML @ index.html for the carousel
+.carousel-inner > .carousel-item > img, .carousel-inner > .item > a > img {
+    max-height: 400px;
+}
+
+.search-results {
+    margin-top: $spacer;
+}
+
+.search-results li {
+    list-style-type: circle;
+}
+
+.sorted-item {
+    color: rgb(87, 94, 100);
+    background-color: $gray-300;
+    padding: 1px;
+    font-family: $font-family-monospace;
+    font-size: medium;
+}
+
+.sorted-item-list li {
+    list-style: none;
+}
+
+.post-content img {
+    object-fit: scale;
+    width: 100%;
+}
+
+.card-body img {
+    object-fit: scale;
+    width: 100%;
+}
+
+.alert-info {
+    text-align: center;
+}
