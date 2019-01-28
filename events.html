@@ -59,13 +59,17 @@ title: "Настани"
         document.querySelectorAll('th[start_date]').forEach(node => {
             if(getCompareDate() > node.attributes['start_date'].value && getCompareDate() < node.attributes['end_date'].value) {
                 $("#" + node.id).html("ВО ТЕК");
+<<<<<<< Updated upstream
                 $("#" + node.id).addClass("current-event");
+=======
+                $("#" + node.id).addClass("text-success");
+>>>>>>> Stashed changes
             } else if (getCompareDate() < node.attributes['start_date'].value) {
                 $("#" + node.id).html("ПРЕТСТОЕН");
-                $("#" + node.id).addClass("upcoming-event");
+                $("#" + node.id).addClass("text-info");
             } else {
                 $("#" + node.id).html("МИНАТ");
-                $("#" + node.id).addClass("past-event");
+                $("#" + node.id).addClass("text-muted");
             }
         })
 </script>
