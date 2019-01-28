@@ -7,7 +7,7 @@ title: "Настани"
 
 <div class="page">
     <h3>Настани во #хаклаб</h3>
-    
+
     {% assign id = 0 %}
     {% assign sorted = site.events | sort: 'start_date' | reverse %}
 
@@ -25,7 +25,7 @@ title: "Настани"
 
                 {% for post in sorted limit:15 %}
                     <tr>
-                        <td><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></td>
+                        <td><a href="{{ post.url | prepend: site.url }}">{{ post.title }}</a></td>
                         <td >{{ post.start_date | date: "%a, %b %d, %Y"  }}</td>
                         <td>{{ post.start_date | date: "%H:%M" }} - {{ post.end_date | date: "%H:%M" }}</td>
 
