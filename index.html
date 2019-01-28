@@ -1,12 +1,12 @@
---- 
-layout: default 
-permalink: / 
-title: "Дома" 
+---
+layout: default
+permalink: /
+title: "Дома"
 ---
 
 <div class="row mt-2">
     <div class="col-md-8">
-        <img style="width: 100%;" src="/assets/img/spodeli.png">
+        <img class="w-100" src="/assets/img/spodeli.png">
         <p> <b>Сподели</b> е иницијатива на непрофитната организација <b>Слободен Софтвер Македонија</b>
             којашто „оперира“ на една локација во <b>Скопје, хаклабот КИКА</b>. Поентата на „Сподели“ е да се приближи концептот
             на слободна култура и слободен софтвер до сите заинтересирани граѓани на Скопје па и пошироко.
@@ -39,9 +39,9 @@ title: "Дома"
         </div>
         <div class="info-panel">
             <h5 class="sidebar-header">Настани</h5>
-            <hr> 
+            <hr>
             {% assign sorted = site.events | sort: 'start_date' | reverse %}
-            {% if sorted.first != nil %}    
+            {% if sorted.first != nil %}
                 {% for post in sorted limit:5 %}
                 <div class="sidebar-event">
                     {{ post.start_date | date_to_string }} <br />
