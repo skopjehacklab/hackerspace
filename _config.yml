@@ -103,3 +103,7 @@ sass:
 collections:
   events:
     output: true
+
+feed:
+  collections:
+    - events
