@@ -38,7 +38,7 @@ title: "Дома"
             </ul>
         </div>
         <div class="info-panel">
-            <h5 class="sidebar-header">Настани</h5>
+            <h5 class="sidebar-header">Настани <a href="feed/events.xml"><span style="margin-left: 5px; font-size: medium; text-decoration: underline; color: #999">feed</span></a></h5>
             <hr>
             {% assign sorted = site.events | sort: 'start_date' | reverse %}
             {% if sorted.first != nil %}
